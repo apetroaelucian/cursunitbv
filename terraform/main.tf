@@ -8,6 +8,7 @@ provider "azurerm" {
 
 
 resource "azurerm_resource_group" "rg" {
-  name     = "${local.prefix}-resources"
+  count    = 2
+  name     = "${local.prefix}-resources-${count.index}"
   location = "West Europe"
 }
